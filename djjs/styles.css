@@ -1,0 +1,17 @@
+.welcome {
+    font-size: 42;
+    font-family: 'Impact';
+    text-align:center;
+    color:blue;
+
+}
+
+.my-button {
+
+  width: 200px;
+  height: 200px;
+  border-style: solid;
+  border-width: 2px;
+  padding: 30px;
+    
+}
