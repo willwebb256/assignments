@@ -40,3 +40,6 @@
     margin-bottom: 10px;
     text-align: center;
 }
+#editForm {
+    display: none;
+}
