@@ -43,3 +43,7 @@
 #editForm {
     display: none;
 }
+
+.body {
+    background-color: lightgrey
+}
