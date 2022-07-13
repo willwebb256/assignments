@@ -50,24 +50,24 @@
 
 // Silver Medal: 
 
-const peopleArray = [
-    {
-      name: "Harrison Ford",
-      occupation: "Actor"
-    },
-    {
-      name: "Justin Bieber",
-      occupation: "Singer"
-    },
-    {
-      name: "Vladimir Putin",
-      occupation: "Politician"
-    },
-    {
-      name: "Oprah",
-      occupation: "Entertainer"
-    }
-  ]
+// const peopleArray = [
+//     {
+//       name: "Harrison Ford",
+//       occupation: "Actor"
+//     },
+//     {
+//       name: "Justin Bieber",
+//       occupation: "Singer"
+//     },
+//     {
+//       name: "Vladimir Putin",
+//       occupation: "Politician"
+//     },
+//     {
+//       name: "Oprah",
+//       occupation: "Entertainer"
+//     }
+//   ]
   
   // ["Harrison Ford", "Vladimir Putin"] // names
   // ["Singer", "Entertainer"] // occupations
