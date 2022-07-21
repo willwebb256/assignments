@@ -47,7 +47,8 @@
 //  jeep.honk()
 //  mazda.honk()
  
- 
+var employees = [];
+
 function Employee (name, jobTitle, salary, statusType){
     this.name = name
     this.jobTitle = jobTitle
@@ -58,16 +59,31 @@ function Employee (name, jobTitle, salary, statusType){
     // }
  }
   
- var carl = new Employee("Carl", "CEO", 150000, "Full Time")
- var yoda = new Employee("Yoda", "CTO", 125000, "Part Time")
- var gerald = new Employee("Gerald", "CPO", 115000, "Contract")
+ var ed = new Employee("Ed", "CEO", 150000, "Full Time")
+ var edd = new Employee("Edd", "CTO", 125000, "Part Time")
+ var eddy = new Employee("Eddy", "CPO", 115000, "Contract")
   
   
  Employee.prototype.status = function(){
      console.log(this.statusType)
  }
 
- carl.status()
- yoda.status()
- gerald.status()
- 
+ //ed.status()
+ //edd.status()
+ //eddy.status()
+
+//  var printEmployeeForm = carl + yoda + gerald
+
+//  for (var i = 0; i < printEmployeeForm.length; i++) {
+//     console.log([i])
+
+//  }
+
+//console.log(ed)
+
+employees.push(ed)
+employees.push(edd)
+employees.push(eddy)
+
+var printEmployeeForm = employees
+console.log(printEmployeeForm)
