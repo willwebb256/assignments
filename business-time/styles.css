@@ -8,7 +8,9 @@
  }
  
 
-    
+ /* #title {
+    margin: 0 auto;
+ }    */
     
  /* Mobile Design */  
 
@@ -36,6 +38,7 @@
  }
  .gotrip {
     position: relative;
+   
     /* left: 0px; */
   
  }
