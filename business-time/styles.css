@@ -1,5 +1,5 @@
 * { /* Resets and Default styling */
-    margin: 10;
+    margin: 0 auto;
     padding: 10;
     font-family: sans-serif;
     /* font-weight: lighter; */
@@ -28,7 +28,7 @@
     width: 95%;
     margin: 5px;
     opacity: 95%;
-    
+
     background-color: rgb(55,44,22,.4);
    
    
@@ -69,7 +69,7 @@
   
  #flex-container > div:nth-child(2){
     /* background-color: firebrick; */
-    height: 50px;
+    /* height: 50px; */
     /* margin: 100 10px; */
  }
   
@@ -139,7 +139,7 @@
  
 #flex-container > div:nth-child(2){
    /* background-color: firebrick; */
-   height: 50px;
+   /* height: 50px; */
    text-align: center;
    font-weight: bold;
    /* margin: 100 10px; */
@@ -214,7 +214,7 @@
      
     #flex-container > div:nth-child(2){
        /* background-color: firebrick; */
-       height: 75px;
+       /* height: 75px; */
        text-align: center;
        font-size: large;
        font-weight: bolder;
@@ -251,7 +251,7 @@
         margin: 5px;
         opacity: 95%;
 
-        background-color: magenta;
+        background-color: #b3bcb8;
         
             
      }
@@ -281,13 +281,13 @@
        align-items: flex-start;
        text-align: center;
        font-size: xx-large;
-       font-weight: bolder;
+       font-weight: bold;
        /* height: 100px;
        margin: 200 10px; */
     }
      
     #flex-container > div:nth-child(1){
-       background-color: magenta;
+       background-color: #b3bcb8;
        /* height: 845px; */
        /* margin: 10px; */
     }
@@ -296,7 +296,7 @@
        /* background-color: firebrick; */
        height: 100px;
        text-align: center;
-       font-size: xx-large;
+       font-size: large;
        /* margin: 100 10px; */
     }
      
@@ -304,7 +304,7 @@
        /* background-color: violet; */
        /* height: 115px; */
        width: 1200px;
-       background-color: magenta;
+       background-color: #b3bcb8;
        /* margin: 100 10px; */
     }  
 
