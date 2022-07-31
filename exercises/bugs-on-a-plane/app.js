@@ -1,6 +1,6 @@
 
 
-var form = document["airline-form"];
+var form = document.getElementById("airline-form");
 var submit = document.getElementById("submit");
 var query = document.querySelector("[data-name=form]");
 
@@ -27,8 +27,9 @@ function formAlert() {
     alert("First Name: " + firstName + "\nLast Name: " + lastName + "\nAge: " + age + "\nGender: " + gender + "\nTravel Location: " + location + "\nDiet: " + diet + "\nAwesome, now if you die, it won't be an accident..");
 }
 
-form.addEventListener("click", function(submit){
-    submit.preventDefault()
+form.addEventListener("submit", function(e){
+    e.preventDefault()
+    formAlert()
 })
 
 // var popup = Runner.displayPopup( {
