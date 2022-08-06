@@ -1,4 +1,89 @@
-#!/usr/bin/env node
+
+const readlineSync = require('readline-sync');
+
+
+const name = readlineSync.question('Hey there young Pokemon Trainer! What is your name?\n');
+
+readlineSync.question('Top of the morning to ya ' + name + ', welcome to Pallet Town!\n This is where you will start your journey to become a Pokemon master.\n In order to battle and gain experience you will need to walk around in the vegetated areas to find Wild Pokemon!\n Then you can battle them to gain HP and experience.\n At any time you can also choose to exit or select print to see all of the data about your profile.\n Press Enter to begin. ');
+
+const wildPokemons = ['Rhydon', 'Alakazam', 'Electrode'];
+const treasure = ['1 entire Bitcoin', 'Redbull and a Chikfila Sandwich', '25mg Δ8 Gummy'];
+var prize = [];
+let userHealth = 30;
+const options =['Walk', 'Exit', 'Print'];
+let pickUp = treasure[Math.floor(Math.random()*treasure.length)];
+
+function game() {
+    const attackPower = Math.floor(Math.random() * (8 - 1) + 2);
+    const wildPokemon = wildPokemons[Math.floor(Math.random() * wildPokemons.length)];
+    let wildPokemonHealth = 30;
+    const wildPokemonPower = Math.floor(Math.random() * (8 - 3) + 2);
+
+    const index = readlineSync.keyInSelect(options, 'What is next on the horizon for you?');
+
+    if (options[index] == 'Exit') {
+        return userHealth = 0;
+    } else if (options[index] == 'Print') {
+        console.log('Name: ' + name + ': \n' + 'User Health: ' + userHealth + '\nTreasure: ' + 'Items: ' + pickUp);
+    } else if (options[index] === 'Walk') {
+        let key = Math.random();
+        if (key <= .3) {
+            console.log('Walking around and no sign of wild Pokemon here so far.');
+        } else if (key >= .3) {
+            console.log('A wild ' + wildPokemon + ' has appeared!\n What would you like to do?');
+
+            while(wildPokemonHealth > 0 && userHealth > 0) {
+
+                const user = readlineSync.question('Enter "r" to run, or enter "a" to attack! ');
+
+                switch (user) {
+                    case 'r':
+                        const run = Math.random();
+                        if (run < .5) {
+                            console.log('You Cant escape! ' + wildPokemon + ' attacked you, causing a damage total of: ' + wildPokemonPower + ' Hit Points.');
+                        } else {
+                            console.log('You ran away successfully. Way to go champ!');
+                            break;
+                        }
+                    case 'a':
+                        wildPokemonHealth -= attackPower;
+                        console.log('Your pokemon attacked ' + wildPokemon + ' with ' + attackPower + ' Hit Points.');
+
+                        userHealth -= wildPokemonPower;
+                        console.log('Enemy Pokemon just attacked you with ' + wildPokemonPower + ' Hit Points.');
+                                           
+                        if (wildPokemonHealth <= 0) {
+                            console.log('Nice work! You defeated ' + wildPokemon + '.\n' + wildPokemon + ' left behind: ' + pickUp);
+                            let loot = Math.random();
+                            if (loot <= .3) {
+                                prize.push(pickUp);
+                            }
+                        } else if (userHealth <= 0) {
+                            console.log(wildPokemon + ' has defeated your Pokemon. You blacked out! You will respawn at the nearest Pokemon Center.');
+                        }
+                }
+            }
+        }
+    }
+}
+
+while(userHealth > 0) {
+    userRestore = function() {
+        userActive = true;
+        userHealth = 30;
+    };
+    userRestore();
+    game();
+}
+
+// Some Issues I am having: 
+// After you run away successfully, it doesnt return you to the main menu. 
+// You are stuck in the run or attack decision loop. 
+// Also - I cant figure out a way to make it print on command at any time. 
+
+// Proposed solution that didnt work:
+// case 'p':
+//     console.log('Name: ' + name + ': \n' + 'User Health: ' + userHealth + '\nTreasure: ' + 'Items: ' + pickUp);
 
 // The year is 1985. Your job is to build a text-based (console) RPG game.
 
@@ -24,89 +109,3 @@
 // 5. Inventory
 // - When the player kills enemies, they are awarded with items
 // - If the user enters 'Print' or 'p' in the console, the console will print the players name, HP, and each item in their inventory
-
-
-
-
-import chalk from 'chalk';
-import inquirer from 'inquirer';
-import gradient from 'gradient-string';
-import chalkAnimation from 'chalk-animation';
-import figlet from 'figlet';
-import { createSpinner } from 'nanospinner';
-
-let playerName;
-
-const sleep = (ms = 2000) => new Promise((r) => setTimeout(r, ms));
-async function welcome() {
-  const rainbowTitle = chalkAnimation.rainbow(
-    'Welcome to Pallet Town! Prepare to explore the Pokemon Multiverse! \n'
-  );
-
-  await sleep();
-  rainbowTitle.stop();
-
-  console.log(`
-    ${chalk.bgBlue('HOW TO PLAY')}
-    You are now in Pallet Town, a great place to start your journey to become the Ultimate Pokemon Master.
-    If you walk around, you might encounter a wild Pokemon and need to ${chalk.bgRed('BATTLE!')}
-    Sometimes you'll be able to run, but other times you won't be able to escape and will need to fight. If you win, you'll get more HP and win some cool prizes. If you lose, you'll party in Valhalla with the Gods! Feel free to type Print or p anytime to see your stats and inventory! Good Luck, and Catch 'em All!
-  `);
-}
-
-
-
-async function askName() {
-    const answers = await inquirer.prompt({
-        name: 'player_name',
-        type: 'input',
-        message: 'Hey Hi, How are ya? What is your name?',
-        default() {
-            return 'Player';
-        },
-    });
-
-    playerName = answers.player_name;
-}
-
-
-
-async function question1() {
-    const answers = await inquirer.prompt ({
-       name: 'question_1', 
-       type: 'list',
-       message: 'Are you ready to wander through the murky forest in pursuit of rare Pokemon?\n',
-       choices: [
-            'Yes, we Walk',
-            'No, I want to rest',
-       ],
-    });
-
-    return handleAnswer(answers.question_1 == 'Yes, we Walk');
-}
-
-    async function handleAnswer(isCorrect) {
-        const spinner = createSpinner('Cool Cool, one second...').start();
-        await sleep();
-
-        if (isCorrect) {
-            spinner.success({ text: `Nice work ${playerName}, let's roll!`});
-        } else {
-            spinner.error({ text: `😴😴😴 Night night ${playerName}, sleep tight!`});
-            process.exit(1);
-        }
-    }
-
-function winner() {
-    console.clear();
-    const msg = `congrats, ${playerName}!\n You are a Poke MASTER!`;
-
-    figlet(msg, (err, data) => {
-        console.log(gradient.pastel.multiline(data));
-    });
-}
-
-await welcome();
-await askName();
-await question1();
-await winner();

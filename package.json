@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/willwebb256/assignments#readme",
   "dependencies": {
+    "chalk": "^5.0.1",
+    "chalk-animation": "^2.0.2",
     "readline-sync": "^1.4.10"
   }
 }
