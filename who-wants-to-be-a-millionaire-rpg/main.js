@@ -69,6 +69,32 @@ async function question1() {
         }
     }
 
+async function question2() {
+    const answers = await inquirer.prompt ({
+        name: 'question_2', 
+        type: 'list',
+        message: 'A Wild Pokemon Appeared! What would you like to do?\n',
+        choices: [
+            'Run',
+            'Attack',
+        ],
+    });
+    
+    return handleAnswer2(answers.question_2 == 'Attack');
+}
+    
+        async function handleAnswer2(isCorrect) {
+            const spinner = createSpinner('Bold strategy, Cotton! Lets see how it pans out for ya!').start();
+            await sleep();
+    
+            if (isCorrect) {
+                spinner.success({ text: `Nice work ${playerName}, your Pokemon used Quick Attack! caused 30 Damage Points to enemy Pokemon!`});
+            } else {
+                spinner.error({ text: `Wow ${playerName}, you got away safely!`});
+                process.exit(1);
+            }
+        }
+
 function winner() {
     console.clear();
     const msg = `congrats, ${playerName}!\n You are a Poke MASTER!`;
@@ -81,4 +107,5 @@ function winner() {
 await welcome();
 await askName();
 await question1();
+await question2();
 await winner();
