@@ -1,17 +1,40 @@
 
 const readlineSync = require('readline-sync');
 
+// const rl = readlineSync.createInterface({
+//  input: process.stdin,
+//  output: process.stdout
+// })
 
 const name = readlineSync.question('Hey there young Pokemon Trainer! What is your name?\n');
 
 readlineSync.question('Top of the morning to ya ' + name + ', welcome to Pallet Town!\n This is where you will start your journey to become a Pokemon master.\n In order to battle and gain experience you will need to walk around in the vegetated areas to find Wild Pokemon!\n Then you can battle them to gain HP and experience.\n At any time you can also choose to exit or select print to see all of the data about your profile.\n Press Enter to begin. ');
 
+// readlineSync.promptCLLoop({
+//     p: function(target, into) {
+//       console.log('Name: ' + name + ': \n' + 'User Health: ' + userHealth + '\nTreasure: ' + 'Items: ' + pickUp);
+//       // Do something...
+//     },
+//     Print: function(target, into) {
+//       console.log('Name: ' + name + ': \n' + 'User Health: ' + userHealth + '\nTreasure: ' + 'Items: ' + pickUp);
+//       // Do something...
+//     },
+//     bye: function() { return true; }
+//   });
+//   console.log('Exited');
+
+// readlineSync.emitKeypressEvents(process.stdin)
+// process.stdin.on('keypress', (str, key) => {
+//     if (key.name === 'p') {
+//         process.stdout.write('Name: ' + name + ': \n' + 'User Health: ' + userHealth + '\nTreasure: ' + 'Items: ' + pickUp);
+// }})
+
 const wildPokemons = ['Rhydon', 'Alakazam', 'Electrode'];
-const treasure = ['1 entire Bitcoin', 'Redbull and a Chikfila Sandwich', '25mg Δ8 Gummy'];
+const treasure = ['1 entire Bitcoin', 'Redbull and a Chikfila Sandwich', 'A Tesla Model Y'];
 var prize = [];
 let userHealth = 30;
 const options =['Walk', 'Exit', 'Print'];
-let pickUp = treasure[Math.floor(Math.random()*treasure.length)];
+let pickUp = treasure[Math.floor(Math.random() * treasure.length)];
 
 function game() {
     const attackPower = Math.floor(Math.random() * (8 - 1) + 2);
@@ -33,6 +56,18 @@ function game() {
             console.log('A wild ' + wildPokemon + ' has appeared!\n What would you like to do?');
 
             while(wildPokemonHealth > 0 && userHealth > 0) {
+
+                // readlineSync.emitKeypressEvents(process.stdin);
+                //     if (process.stdin.isTTY)
+                //     process.stdin.setRawMode(true);
+
+                //     process.stdin.on('keypress', (str, key) => {
+                //         if(key.name == 'Print' || key.name == 'p'){
+                //             console.log('Name: ' + name + ': \n' + 'User Health: ' + userHealth + '\nTreasure: ' + 'Items: ' + pickUp);
+                //         }
+                //         // console.log(str)
+                //         // console.log(key)
+                //         })
 
                 const user = readlineSync.question('Enter "r" to run, or enter "a" to attack! ');
 
