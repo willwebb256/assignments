@@ -39,51 +39,7 @@ const options =['Walk', 'Exit', 'Print'];
 
 const sleep = (ms = 2000) => new Promise((r) => setTimeout(r, ms));
 
-function rollEncounter(min, max) {
-    let encounterEnemy = Math.floor(Math.random()*3) === 1
-    if(!encounterEnemy){
-       let allClear = readline.keyIn("Nothing to see here, no wild Pokemon found."); //readline keyInPause --> nothing is found
-    }
-    if(encounterEnemy){
-        let enemy = enemies[math.floor]
-        let message = readline.keyIn( `youve encountered ${enemy.name}!`);
-        fightEnemy(enemy)
-    }
-    return Math.floor(Math.random() * (max-min) + min);
-}
 
-function wildPokemonEncounter(enemy) {
-    rollEncounter(1, 4)
-    if (diceRoll === 1) {
-        scyther = enemy
-    } else if (diceRoll === 2) {
-        alakazam = enemy
-    } else if (diceRoll === 3) {
-        porygon = enemy
-    }
-}
-
-function openInventory () {
-    for( let i = 0; playerName.inventory.length; i++ ){
-        console.log(playerName.inventory[i])
-    }
-}
-
-function calculateEnemyDamage () {
-    console.log(playerName.userHealth -= enemyAttack)
-}
-
-function checkUserHealth () {
-    console.log(playerName.userHealth)
-}
-
-function checkEnemyHealth () {
-    console.log(wildPokemonEncounter.wildPokemonHealth)
-}
-
-function attackWildPokemon () {
-    console.log(attackPower)
-}
 
 
 // These are the functions in order that will walk you through the game:
@@ -170,47 +126,93 @@ async function question1() {
                 }
             }
 // 5. 
-    function game() {
-    const attackPower = Math.floor(Math.random() * (8 - 1) + 2);
-    const wildPokemonPower = Math.floor(Math.random() * (8 - 3) + 2);
-        let key = Math.random();
-            if (key <= .3) {
-            console.log('Walking around and no sign of wild Pokemon here so far.');
-        } else if (key >= .3) {
-            console.log('A wild ' + wildPokemonEncounter + ' has appeared!\n What would you like to do?');
+    async function game() {
+            const attackPower = Math.floor(Math.random() * (8 - 1) + 2);
+            const wildPokemonPower = Math.floor(Math.random() * (8 - 3) + 2);
+            function rollEncounter(min, max) {
+            let encounterEnemy = Math.floor(Math.random() * 3) === 1
+                if(!encounterEnemy){
+                let allClear = readline.keyIn("Nothing to see here, no wild Pokemon found."); //readline keyInPause --> nothing is found
+            }
+                if(encounterEnemy){
+                    let enemy = enemies[math.floor]
+                    let message = readline.keyIn( `youve encountered ${enemy.name}!`);
+                    fightEnemy(enemy)
+                }
+            return Math.floor(Math.random() * (max-min) + min);
+        }
 
-            while(wildPokemonHealth > 0 && playerName.userHealth > 0) {
+            function wildPokemonEncounter(enemy) {
+                rollEncounter(1, 4)
+                    if (diceRoll === 1) {
+                    scyther = enemy
+                    } else if (diceRoll === 2) {
+                     alakazam = enemy
+                    } else if (diceRoll === 3) {
+                    porygon = enemy
+                }
+            }
+
+            function openInventory () {
+                for( let i = 0; playerName.inventory.length; i++ ){
+                    console.log(playerName.inventory[i])
+                }                 
+            }
+
+            function calculateEnemyDamage () {
+            console.log(playerName.userHealth -= enemyAttack)
+        }
+
+            function checkUserHealth () {
+                console.log(playerName.userHealth)
+            }
+
+            function checkEnemyHealth () {
+                console.log(wildPokemonEncounter.wildPokemonHealth)
+            }
+
+            function attackWildPokemon () {
+                console.log(attackPower)
+        }
+        // let key = Math.random();
+        //     if (key <= .3) {
+        //     console.log('Walking around and no sign of wild Pokemon here so far.');
+        // } else if (key >= .3) {
+
+            console.log('A wild ' + enemies + ' has appeared!\n What would you like to do?');
+
+            while(enemies.wildPokemonHealth > 0 && playerName.userHealth > 0) {
 
                 const user = readlineSync.question('Enter "r" to run, or enter "a" to attack! ');
                     switch (user) {
                     case 'r':
                         const run = Math.random();
                         if (run < .5) {
-                            console.log('You Cant escape! ' + wildPokemon + ' attacked you, causing a damage total of: ' + wildPokemonPower + ' Hit Points.');
+                            console.log('You Cant escape! ' + enemies + ' attacked you, causing a damage total of: ' + wildPokemonPower + ' Hit Points.');
                         } else {
                             console.log('You ran away successfully. Way to go champ!');
                             break;
                         }
                     case 'a':
-                        wildPokemonHealth -= attackPower;
-                        console.log('Your pokemon attacked ' + wildPokemon + ' with ' + attackPower + ' Hit Points.');
+                        enemies.wildPokemonHealth -= attackPower;
+                        console.log('Your pokemon attacked ' + enemies + ' with ' + attackPower + ' Hit Points.');
 
-                        userHealth -= wildPokemonPower;
+                        playerName.userHealth -= wildPokemonPower;
                         console.log('Enemy Pokemon just attacked you with ' + wildPokemonPower + ' Hit Points.');
                                            
-                        if (wildPokemonHealth <= 0) {
-                            console.log('Nice work! You defeated ' + wildPokemon + '.\n' + wildPokemon + ' left behind: ' + pickUp);
+                        if (enemies.wildPokemonHealth <= 0) {
+                            console.log('Nice work! You defeated ' + enemies + '.\n' + enemies + ' left behind: ' + pickUp);
                             let loot = enemies.treasure();
                             if (loot <= .3) {
                                 prize.push(pickUp);
                             }
-                        } else if (userHealth <= 0) {
-                            console.log(wildPokemon + ' has defeated your Pokemon. You blacked out! You will respawn at the nearest Pokemon Center.');
+                        } else if (playerName.userHealth <= 0) {
+                            console.log(enemies + ' has defeated your Pokemon. You blacked out! You will respawn at the nearest Pokemon Center.');
                            }
                 }
             }
         }
-    }
+    
     
     //             let inGame = true;
     //             let inBattle = false;
@@ -239,14 +241,6 @@ function winner() {
 
 // Other things that help make this game run:
 
-// while(playerName.userHealth > 0) {
-//     userRestore = function() {
-//         userActive = true;
-//         userHealth = 40;
-//     }};
-//     userRestore();
-// game();
-
 
 await welcome();
 await askName();
@@ -255,4 +249,10 @@ await question2();
 await game();
 await winner();
 
-
+// while(playerName.userHealth > 0) {
+//     userRestore = function() {
+//         userActive = true;
+//         userHealth = 40;
+//     }};
+//     userRestore();
+//     game();
