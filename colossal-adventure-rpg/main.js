@@ -139,7 +139,7 @@ async function question1() {
             }
                 if(encounterEnemy){
                     let enemy = enemies[math.floor]
-                    let message = readline.keyIn( `youve encountered ${enemy.name}!`);
+                    let message = readline.keyIn( `youve encountered ${enemy.name}!`); // could be problematic here
                     fightEnemy(enemy)
                 }
             return Math.floor(Math.random() * (max-min) + min);
@@ -177,10 +177,10 @@ async function question1() {
             function attackWildPokemon () {
                 console.log(attackPower)
         }
-        // let key = Math.random();
-        //     if (key <= .3) {
-        //     console.log('Walking around and no sign of wild Pokemon here so far.');
-        // } else if (key >= .3) {
+        let key = Math.random();
+            if (key <= .3) {
+            console.log('Walking around and no sign of wild Pokemon here so far.');
+        } else if (key >= .3) {
 
             console.log('A wild ' + enemies + ' has appeared!\n What would you like to do?');
 
