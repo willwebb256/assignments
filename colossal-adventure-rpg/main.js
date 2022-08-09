@@ -9,9 +9,11 @@ import { createSpinner } from 'nanospinner';
 import keyIn from 'readline-sync';
 import readlineSync from 'readline-sync';
 
+
 // Defined Objects and Functions:
 
-let playerName = {
+let player = {
+    userName: '',
     userHealth: 40,
     inventory: [],
 
@@ -70,7 +72,7 @@ async function askName() {
             return 'player';
         },
     });
-    playerName = answers.player_name;
+    player.userName = answers.player_name;
 }
 // 3.
 async function question1() {
@@ -81,6 +83,7 @@ async function question1() {
        choices: [
             'Walk',
             'Exit',
+            'Print',
        ],
     });
     return handleAnswer(answers.question_1 == 'Walk');
@@ -90,9 +93,9 @@ async function question1() {
         await sleep();
 
         if (isCorrect) {
-            spinner.success({ text: `Alright ${playerName}, let's roll!`});
+            spinner.success({ text: `Alright ${player.userName}, let's roll!`});
         } else {
-            spinner.error({ text: `😴😴😴 Boring ${playerName}, see you later!`});
+            spinner.error({ text: `😴😴😴 Boring ${player.userName}, see you later!`});
             process.exit(1);
         }
     }
@@ -119,9 +122,9 @@ async function question1() {
                 await sleep();
         
                 if (isCorrect) {
-                    spinner.success({ text: `Nice work ${playerName}, your Pokemon used Quick Attack! caused 30 Damage Points to enemy Pokemon!`});
+                    spinner.success({ text: `Nice work ${player.userName}, your Pokemon used Quick Attack! caused 30 Damage Points to enemy Pokemon!`});
                 } else {
-                    spinner.error({ text: `Wow ${playerName}, you got away safely!`});
+                    spinner.error({ text: `Wow ${player.userName}, you got away safely!`});
                     process.exit(1);
                 }
             }
@@ -154,17 +157,17 @@ async function question1() {
             }
 
             function openInventory () {
-                for( let i = 0; playerName.inventory.length; i++ ){
-                    console.log(playerName.inventory[i])
+                for( let i = 0; player.inventory.length; i++ ){
+                    console.log(player.inventory[i])
                 }                 
             }
 
             function calculateEnemyDamage () {
-            console.log(playerName.userHealth -= enemyAttack)
+            console.log(player.userHealth -= enemyAttack)
         }
 
             function checkUserHealth () {
-                console.log(playerName.userHealth)
+                console.log(player.userHealth)
             }
 
             function checkEnemyHealth () {
@@ -181,7 +184,7 @@ async function question1() {
 
             console.log('A wild ' + enemies + ' has appeared!\n What would you like to do?');
 
-            while(enemies.wildPokemonHealth > 0 && playerName.userHealth > 0) {
+            while(enemies.wildPokemonHealth > 0 && player.userHealth > 0) {
 
                 const user = readlineSync.question('Enter "r" to run, or enter "a" to attack! ');
                     switch (user) {
@@ -197,7 +200,7 @@ async function question1() {
                         enemies.wildPokemonHealth -= attackPower;
                         console.log('Your pokemon attacked ' + enemies + ' with ' + attackPower + ' Hit Points.');
 
-                        playerName.userHealth -= wildPokemonPower;
+                        player.userHealth -= wildPokemonPower;
                         console.log('Enemy Pokemon just attacked you with ' + wildPokemonPower + ' Hit Points.');
                                            
                         if (enemies.wildPokemonHealth <= 0) {
@@ -206,7 +209,7 @@ async function question1() {
                             if (loot <= .3) {
                                 prize.push(pickUp);
                             }
-                        } else if (playerName.userHealth <= 0) {
+                        } else if (player.userHealth <= 0) {
                             console.log(enemies + ' has defeated your Pokemon. You blacked out! You will respawn at the nearest Pokemon Center.');
                            }
                 }
@@ -220,9 +223,9 @@ async function question1() {
                    // const index = readlineSync.keyInSelect(options, 'What is next on the horizon for you?');
 
     // if (options[index] == 'Exit') {
-    //     playerName.userHealth = 0;
+    //     player.userHealth = 0;
     // } else if (options[index] == 'Print') {
-    //     console.log(playerName);
+    //     console.log(player);
     // } else if (options[index] === 'Walk') {
 
     //            
@@ -230,7 +233,7 @@ async function question1() {
 // 6.
 function winner() {
     console.clear();
-    const msg = `congrats, ${playerName}!\n You are a Poke MASTER!`;
+    const msg = `congrats, ${player.userName}!\n You are a Poke MASTER!`;
 
     figlet(msg, (err, data) => {
         console.log(gradient.pastel.multiline(data));
@@ -246,10 +249,10 @@ await welcome();
 await askName();
 await question1();
 await question2();
-await game();
+await  game();
 await winner();
 
-// while(playerName.userHealth > 0) {
+// while(player.userHealth > 0) {
 //     userRestore = function() {
 //         userActive = true;
 //         userHealth = 40;
