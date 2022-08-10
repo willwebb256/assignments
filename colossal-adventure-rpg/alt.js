@@ -44,7 +44,7 @@ function game() {
         } else if (key >= .3) {
             console.log(chalk.magentaBright('A wild ' + wildPokemon + ' has appeared!\n What would you like to do?'));
 
-            if (wildPokemonHealth > 0 && userHealth > 0) {
+            while (wildPokemonHealth > 0 && userHealth > 0) {
             // Change to while 
 
                 const user = readlineSync.question(chalk.yellow('Enter "r" to run, or enter "a" to attack! '));
