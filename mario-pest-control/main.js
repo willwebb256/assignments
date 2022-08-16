@@ -9,17 +9,17 @@ form.addEventListener("submit", (event) => {
    var y=form.lname.value;
    var z=form.age.value;
    var a=form.gender.value;
-   var b=form.city.value;
+   var b=form.baddie.value;
 //    var c=form.diet.value; 
 
 const checkedInputs = [];
-     for(let i = 0; i < form.diet.length; i++){
+     for(let i = 0; i < form.type.length; i++){
        if(form.diet[i].checked){
-           checkedInputs.push(form.diet[i].value)
+           checkedInputs.push(form.type[i].value)
        }
    }
  
-   alert("First Name:"+x+"     "+"Last Name:"+y+"     "+"Age:"+z+"     "+"Pronouns:"+a+"    "+"Destination:"+b+"     "+"Dietary Restrictions:"+checkedInputs+"     ");
+   alert("First Name:"+x+"     "+"Last Name:"+y+"     "+"Age:"+z+"     "+"Pronouns:"+a+"    "+"Baddies:"+b+"     "+"Types:"+checkedInputs+"     ");
 
 })
   
