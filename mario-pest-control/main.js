@@ -5,14 +5,26 @@ const form = document.myForm;
 form.addEventListener("submit", (event) => {
    event.preventDefault()
 
-   let x=form.fname.value;
-   let y=form.lname.value;
-   let z=form.address.value;
-   let a=form.email.value;
-   let b=form.phone.value;
-   let c=form.goombaNumber.value; 
-   let d=form.bombNumber.value;
-   let e=form.cheepNumber.value;
+   let fName=form.fname.value;
+   let lName=form.lname.value;
+   let address=form.address.value;
+   let email=form.email.value;
+   let phone=form.phone.value;
+   let goombaNumber=form.goombaNumber.value; 
+   let bombNumber=form.bombNumber.value;
+   let cheepNumber=form.cheepNumber.value;
+
+   
+   goombaNumber = Number (goombaNumber) * 5;
+   bombNumber = Number (bombNumber) * 7;
+   cheepNumber = Number (cheepNumber) * 11;
+  
+//    // 1 . <h1></h1>
+//    const h1 = document.createElement('h1')
+//    // 2. <h1>The Sum of the Two Inputs</h1>
+//    h1.textContent = parseFloat(c) + parseFloat (d) + parseFloat (e);
+//    // 3. Append
+//    document.getElementsByTagName("body")[0].append(h1)
 
 const checkedInputs = [];
      for(let i = 0; i < form.baddie.length; i++){
@@ -21,7 +33,7 @@ const checkedInputs = [];
        }
    }
  
-   alert("First Name:"+x+"     "+"Last Name:"+y+"     "+"Address:"+z+"     "+"Email:"+a+"    "+"Phone:"+b+"     "+"Types of Baddies:"+checkedInputs+"     "+"Total Sum: "+);
+   alert("First Name: "+fName+"\n"+"Last Name: "+lName+"\n"+"Address: "+address+"\n"+"Email: "+email+"\n"+"Phone: "+phone+"\n"+"Types of Baddies: "+checkedInputs+"\n"+"Total Sum: " + Number(goombaNumber + bombNumber + cheepNumber) + " Coins");
 
 })
   
