@@ -33,7 +33,7 @@ const checkedInputs = [];
        }
    }
  
-   alert("First Name: "+fName+"\n"+"Last Name: "+lName+"\n"+"Address: "+address+"\n"+"Email: "+email+"\n"+"Phone: "+phone+"\n"+"Types of Baddies: "+checkedInputs+"\n"+"Total Sum: " + Number(goombaNumber + bombNumber + cheepNumber) + " Coins");
+   alert("First Name: "+fName+"\n"+"Last Name: "+lName+"\n"+"Address: "+address+"\n"+"Email: "+email+"\n"+"Phone: "+phone+"\n"+"Types of Baddies: "+checkedInputs+"\n\n\n"+"Total Sum: " + Number(goombaNumber + bombNumber + cheepNumber) + " Coins");
 
 })
   
