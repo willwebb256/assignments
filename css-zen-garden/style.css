@@ -8,13 +8,15 @@ html, body {
 	display: grid;
 	margin: auto;
 	margin: 0 auto;
-	padding-left: 4%;
-	padding-right: 4%;
+	padding-left: 2%;
+	padding-right: 2%;
 	justify-content: center;
-	grid-template-columns: repeat(12, auto-fill);
-	grid-template-rows: repeat(7, minmax(250px, 1fr)); 
+	grid-template-columns: auto;
+	grid-template-rows: auto; 
 	/* grid-template-rows: repeat(12, minmax (75px, 100%)); */
 }
+
+.img { max-width: fit-content; height: auto }
 
 /* Laptop */
 
@@ -25,7 +27,8 @@ html, body {
         color: #555753; 
         grid-column: 1 / 6; 
         grid-row: 1 / 2;
-		height: auto;
+		
+		
 		
      }
       
@@ -38,7 +41,7 @@ html, body {
 		letter-spacing: 1px; 
 		margin-bottom: 0; 
 		color: #7D775C;
-		height: auto;
+		
 		
      }
       
@@ -49,9 +52,9 @@ html, body {
         grid-row: 2 / 3;
 		font: italic normal 1.4em georgia, sans-serif;
 		text-align: justify;
-		
+		padding: 1%;
 		color: #7D775C;	
-		height: 900px;
+		
 		
 		
      }
@@ -65,7 +68,7 @@ html, body {
 		letter-spacing: 1px; 
 		margin-bottom: 0; 
 		color: #7D775C;
-		height: 900px;
+		
      }
       
      #box5 {
@@ -85,14 +88,15 @@ html, body {
         grid-column: 7 / 12; 
         grid-row: 3 / 4;
 		font: italic normal 1.4em georgia, sans-serif;
-		letter-spacing: 1px; 
-		
+		letter-spacing: 1px; 		
 		color: #7D775C;
      }
       
      #box7 {
         background: #fff url(/001/blossoms.jpg) no-repeat bottom right; 
-        color: #555753; 
+        color: #555753;
+		font: italic normal 1.4em georgia, sans-serif;
+		letter-spacing: 1px;  
         grid-column: 1 / 6; 
         grid-row: 4 / 5;
      }
@@ -100,6 +104,8 @@ html, body {
      #box8 {
         background: #fff url(/001/blossoms.jpg) no-repeat bottom right; 
         color: #555753; 
+		font: italic normal 1.4em georgia, sans-serif;
+		letter-spacing: 1px; 
         grid-column: 7 / 12;
         grid-row: 4 / 5;
      }
@@ -107,6 +113,8 @@ html, body {
      #box9 {
         background: #fff url(/001/blossoms.jpg) no-repeat bottom right; 
         color: #555753; 
+		font: italic normal 1.4em georgia, sans-serif;
+		letter-spacing: 1px; 
         grid-column: 1 / 12; 
         grid-row: 6 / 7;
 		 
@@ -141,7 +149,7 @@ html, body {
 	margin: 0; 
 	padding: 0;
 	} */
-/* p { 
+p { 
 	margin-top: 0; 
 	text-align: justify;
 	} */
@@ -150,7 +158,7 @@ html, body {
 	letter-spacing: 1px; 
 	margin-bottom: 0; 
 	color: #7D775C;
-	} */
+	}
 	
 a:link { 
 	font-weight: bold; 
