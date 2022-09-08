@@ -46,6 +46,21 @@ h3 {
 	
 }
 
+ul {
+    list-style-type: none;
+    padding: 0;
+    /* border: 2px solid #c141f4; */
+}
+
+ul li {
+    padding: 10px 18px;
+    border-bottom: 2px solid #a8d3c8b1;
+}
+
+ul li:last-child {
+    border-bottom: none;
+}
+
 
 .img { max-width: fit-content; height: auto }
 
@@ -80,7 +95,7 @@ a.button1 {
 
 /* Laptop */
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1240px) {
 
     #box1 {
         background: #fff  ; 
@@ -102,7 +117,9 @@ a.button1 {
 		margin-bottom: 0; 
 		color: #7D775C;
 		padding-left: 30px;
-		font-size: x-large
+		font-size: x-large;
+		padding-top: 75px;
+		padding-bottom: 75px;
 		
 		
      }
@@ -117,6 +134,8 @@ a.button1 {
 		/* text-align: justify;
 		padding: 1%; */
 		height: max-content;
+		padding-left: 50px;
+		padding-right: 50px;
 		
 		
 		
@@ -145,6 +164,8 @@ a.button1 {
 		margin-bottom: 0; 
 		background-image: url(http://www.csszengarden.com/214/bamboo.png);
 		height: max-content;
+		padding-left: 50px;
+		padding-right: 50px;
      }
 
 	 #box6 {
@@ -165,6 +186,8 @@ a.button1 {
         grid-column: 1 / 6; 
         grid-row: 4 / 5;
 		height: max-content;
+		padding-left: 50px;
+		padding-right: 50px;
      }
       
      #box8 {
@@ -211,7 +234,7 @@ a.button1 {
 
 /* Smaller Screens */
 
-@media only screen and (max-width: 1199px) {
+@media only screen and (max-width: 1239px) {
 
 	#box1 {
         background: #fff  ; 
