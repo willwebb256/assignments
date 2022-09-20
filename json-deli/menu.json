@@ -1,0 +1,68 @@
+{
+    "appetizers": [
+        "Chips & Queso", [
+            ["cornchips", "cheese", "salt", "peppers"], 
+            ["Freshly baked corn chips with boiling hot queso fit for the yassss Queens of Brunch."]
+            ], 
+        "Fried Pickles", [
+            ["pickles", "panko", "salt", "pepper", "ranch"],
+            ["Rest assured, you will be satisfied with this tasty, crispy treat."]
+            ], 
+        "Caprese", [
+            ["tomato", "mozarella", "basil", "onion", "cilantro", "olive oil"],
+            ["Freshly rolled mozarella cheese from uncle Tommy, sliced over the juiciest tomatoes on this side of the Mississippi."]
+            ]
+        ],
+    "coldSandwiches": [
+        "Turkey Club", [
+            ["turkey", "bacon", "lettuce", "tomato", "choice of cheese", "mayo", "choice of bread"], 
+            ["Fresh carved oven roasted turkey piled high with your choice of cheese, lettuce, tomato and mayo on your choice of bread"]
+            ],
+        "Chicken Salad", [
+            ["chicken salad", "lettuce", "tomato", "choice of cheese", "choice of bread"], 
+            ["Homemade chicken salad made daily with your choice of cheese, lettuce and tomato on your choice of bread"]
+            ],
+        "Leaf Eater", [
+            ["Hempeh", "lettuce", "onions", "peppers", "choice of bread"], 
+            ["This is a modern twist to a classic with some epic hemp infused tempeh for over 22 grams of protein per serving in a great sandy"]
+            ]
+        ],
+    "hotSandwiches": [
+        "Spicy Chicken Sandwich", [
+            ["fried spicy chicken breast", "JSON sauce", "tomato", "pepper jack cheese", "multigrain bun"],
+            ["NGL, we stole chickfilas IP to their sandwich and reverse engineered it to be served on Sundays."]
+            ],
+        "Philly Cheesesteak", [
+            ["sirloin steak", "cheese", "onion", "peppers", "French roll"],
+            ["Prime sirloin steak on a French roll smothered with cheese, onions and peppers."]
+            ],
+        "Open Faced Pot Roast Sandwich", [
+            ["pot roast", "gravy", "mashed potatoes"],
+            ["Homemade pot roast with our JSON's famous gravy and mashed potatoes."]            
+            ]
+        ],
+    "Desserts": [
+        "Chocolate Cake", [
+            ["chocolate", "frosting"], 
+            ["Decadent chocolate cake."]
+            ],
+        "Cheesecake", [
+            ["cheesecake", "blueberries", "cinnamon"],
+            ["Rich cheesecake."]
+            ]
+        ], 
+    "Drinks": [
+        "Beers and Seltzers", [
+            ["Voodoo Ranger IPA", "Light Hearted Ale", "Whiteclaw", "Truly"], 
+            ["Choose among the finest domestic and imported beers and seltzers to get lit at brunch."]
+            ] ,
+        "Wine", [
+            ["Merlot", "Chardonnay", "Pinot Noir", "Cabernet Sauvignon"], 
+            ["Choose among the finest wine."]
+            ] ,
+        "Soft drinks", [
+            ["La Croix", "Alani Nu", "Red Bull", "Liquid Death"], 
+            ["Choose among these favorites."]
+            ]
+    ]
+}
