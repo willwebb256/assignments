@@ -11,19 +11,29 @@ function getData(){
     clearList()
    
     for(let i = 0; i < data.length; i++){
+// Posting todo items
         const h1 = document.createElement('h1')
         h1.textContent = data[i].title 
         const container = document.createElement('div')
         container.append(h1)
-        const deleteButton = document.createElement('button')
+        
         container.style.backgroundColor = "green"
+
+// Delete Button
+        const deleteButton = document.createElement('button')
         deleteButton.addEventListener("click", () => {
             axios.delete("https://api.vschool.io/willwebb/todo/" + data[i]._id).then(()=> container.remove())
             })
-        container.append(deleteButton)
-        // const checkBox = document.createElement() 
-        deleteButton.textContent = "X"      
+        container.append(deleteButton)       
+        deleteButton.textContent = "Delete"      
         document.getElementById('todo-list').appendChild(container)
+
+// Check Mark for completed items
+        const checkMark = document.createElement('button')
+        checkMark.addEventListener("click", ()=> {
+            if (data.completed = true){
+                axios.put("https://api.vschool.io/willwebb/todo/" + data[i]._id).then(()=> container.style.textDecoration = lineThrough)}
+        })
     }
  }
 
