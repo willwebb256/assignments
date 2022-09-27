@@ -15,10 +15,8 @@ function getData(){
         const h1 = document.createElement('h1')
         h1.textContent = data[i].title 
         const container = document.createElement('div')
-        container.append(h1)
-        
-        container.style.backgroundColor = "green"
-
+        container.append(h1)        
+        container.style.backgroundColor = "magenta"
 // Delete Button
         const deleteButton = document.createElement('button')
         deleteButton.addEventListener("click", () => {
@@ -27,23 +25,29 @@ function getData(){
         container.append(deleteButton)       
         deleteButton.textContent = "Delete"      
         document.getElementById('todo-list').appendChild(container)
-
 // Check Mark for completed items
-        const checkMark = document.createElement('button')
-        checkMark.addEventListener("click", ()=> {
-            if (data.completed = true){
-                axios.put("https://api.vschool.io/willwebb/todo/" + data[i]._id).then(()=> container.style.textDecoration = lineThrough)}
-        })
-    }
- }
+        const completeButton = document.createElement('button')
+        const boxCheck = data[i].completed
+        completeButton.addEventListener("click", ()=> {
+            if (boxCheck === true){
+                container.append(completeButton)
+                completeButton.textContent = "Complete"
+            // console.log(boxCheck)
+            } else if (boxCheck === false){
+                container.append(completeButton)
+                completeButton.textContent = "Incomplete"
+            // console.log(boxCheck)
+        }
+    })    
+                // axios.put("https://api.vschool.io/willwebb/todo/" + data[i]._id).then(()=> container.style.textDecoration = lineThrough)}
+        }
+        // const completeButton = document.createElement('button')
+        
+        if (boxCheck === false) {
 
-
-// Class List look up toggle 
-
+ }}
 
  // Edit (PUT) Function
-
- // Delete Function
 
 // Check Box function uncheck() {
 //     document.getElementById("myCheck").checked = false;
