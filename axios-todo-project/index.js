@@ -15,37 +15,59 @@ function getData(){
         const h1 = document.createElement('h1')
         h1.textContent = data[i].title 
         const container = document.createElement('div')
-        container.append(h1)        
+        container.append(h1)
+        if (data[i].completed){
+           h1.style.textDecoration = "line-through" 
+        }        
         container.style.backgroundColor = "magenta"
 // Delete Button
         const deleteButton = document.createElement('button')
         deleteButton.addEventListener("click", () => {
-            axios.delete("https://api.vschool.io/willwebb/todo/" + data[i]._id).then(()=> container.remove())
+            axios.delete("https://api.vschool.io/willwebb/todo/" + data[i]._id)
+            .then(()=> container.remove())
+            .catch(err => console.log(err))
             })
         container.append(deleteButton)       
         deleteButton.textContent = "Delete"      
         document.getElementById('todo-list').appendChild(container)
 // Check Mark for completed items
-        const completeButton = document.createElement('button')
-        const boxCheck = data[i].completed
-        completeButton.addEventListener("click", ()=> {
-            if (boxCheck === true){
-                container.append(completeButton)
-                completeButton.textContent = "Complete"
-            // console.log(boxCheck)
-            } else if (boxCheck === false){
-                container.append(completeButton)
-                completeButton.textContent = "Incomplete"
-            // console.log(boxCheck)
+        const checkBox = document.createElement('input')
+        const checkBoxLabel = document.createElement('label')
+        container.append(checkBoxLabel)
+        checkBoxLabel.textContent = "Completed?"
+        container.append(checkBox)
+        checkBox.type = "checkBox"
+        checkBox.style.width= "20px"
+        if(data[i].completed){
+            checkBox.checked
+        }
+
+        // const boxCheck = data[i].completed
+        checkBox.addEventListener("click", ()=> {
+            console.log("checkBox")
+            if (checkBox.checked){
+                axios.put("https://api.vschool.io/willwebb/todo/" + data[i]._id, {completed: false})
+                .then(res => console.log(res))
+                .catch(err => console.log(err)) 
+                h1.style.textDecoration = "line-through"    
+               
+          
+            } else if (!checkBox.checked){
+                axios.put("https://api.vschool.io/willwebb/todo/" + data[i]._id, {completed: true})
+                .then(res => console.log(res))
+                .catch(err => console.log(err))                
+                h1.style.textDecoration = "none"
+                
+          
         }
     })    
                 // axios.put("https://api.vschool.io/willwebb/todo/" + data[i]._id).then(()=> container.style.textDecoration = lineThrough)}
         }
         // const completeButton = document.createElement('button')
         
-        if (boxCheck === false) {
+        // if (boxCheck === false) {
 
- }}
+ }
 
  // Edit (PUT) Function
 
