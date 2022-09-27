@@ -13,23 +13,39 @@ function getData(){
     for(let i = 0; i < data.length; i++){
         const h1 = document.createElement('h1')
         h1.textContent = data[i].title 
-        // data[i].description + data[i].imgUrl was going to add this to display the description and the image but need to format the image to show the photo
-        document.getElementById('todo-list').appendChild(h1)
+        const container = document.createElement('div')
+        container.append(h1)
+        const deleteButton = document.createElement('button')
+        container.style.backgroundColor = "green"
+        deleteButton.addEventListener("click", () => {
+            axios.delete("https://api.vschool.io/willwebb/todo/" + data[i]._id).then(()=> container.remove())
+            })
+        container.append(deleteButton)
+        // const checkBox = document.createElement() 
+        deleteButton.textContent = "X"      
+        document.getElementById('todo-list').appendChild(container)
     }
  }
+
+
+// Class List look up toggle 
+
 
  // Edit (PUT) Function
 
  // Delete Function
 
- // create a check boolean aka item.checked, if true then style it so it has a strikethrough line
+// Check Box function uncheck() {
+//     document.getElementById("myCheck").checked = false;
+// }
+
+
+// create a check boolean aka item.checked, if true then style it so it has a strikethrough line
 //  function check() {
 //     document.getElementById("myCheck").checked = true;
 // }
 
-// function uncheck() {
-//     document.getElementById("myCheck").checked = false;
-// }
+
 
 // Changing the image source to reflect the imgUrl from the API
 // function changeScr() {
