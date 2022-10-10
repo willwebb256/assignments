@@ -61,9 +61,11 @@ function getData(){
           
         }
     })    
-                // axios.put("https://api.vschool.io/willwebb/todo/" + data[i]._id).then(()=> container.style.textDecoration = lineThrough)}
+                axios.put("https://api.vschool.io/willwebb/todo/" + data[i]._id, {completed: false})
+                    .then(res => console.log(res))
+                    .catch(err => console.log(err))
         }
-        // const completeButton = document.createElement('button')
+        const completeButton = document.createElement('button')
         
         // if (boxCheck === false) {
 
