@@ -55,7 +55,7 @@ section {
 }
 
 .card--image {
-  width: 100%;
+  max-width: 85%;
   border-radius: 9px;
   margin-bottom: 9px;
 }

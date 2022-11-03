@@ -11,11 +11,11 @@ export default function Card(props) {
                
             }
             <img 
-                src={GoogleMapsIcon}
+                src={require(`${props.imageUrl}`)}
                 className="card--image" 
             />
             <div className="card--stats">
-                <img src={require(`${props.imageUrl}`)} className="card--pin" />
+                <img src={GoogleMapsIcon} className="card--pin" />
                 <span>{props.location}</span>
                 <span className="gray"><a href="({props.googleMapsUrl})">view on google maps</a></span>
             </div>
