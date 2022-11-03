@@ -1,4 +1,5 @@
 import React from "react"
+import GoogleMapsIcon from "./assets/images/googleMap.png"
 
 export default function Card(props) {
    
@@ -10,11 +11,11 @@ export default function Card(props) {
                
             }
             <img 
-                src={`../images/${props.imageUrl}`}
+                src={GoogleMapsIcon}
                 className="card--image" 
             />
             <div className="card--stats">
-                <img src="../images/googleMap.png" className="card--pin" />
+                <img src={require(`${props.imageUrl}`)} className="card--pin" />
                 <span>{props.location}</span>
                 <span className="gray"><a href="({props.googleMapsUrl})">view on google maps</a></span>
             </div>

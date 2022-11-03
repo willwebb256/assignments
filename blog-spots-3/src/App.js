@@ -1,3 +1,8 @@
+import data from "./data"
+import Card from "./Card"
+import Navbar from "./Navbar"
+import "./style.css"
+
 export default function App() {
   const cards = data.map(item => {
       return (
