@@ -5,7 +5,7 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #918E9B;
+  background-color: #271b51;
 }
 
 nav {
@@ -13,15 +13,17 @@ nav {
   display: flex;
   padding: 20px 36px;
   box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
-  background-color: black;
+  background-color: rgba(99, 9, 81, 0.758);
 }
 
 .bold {
   font-weight: bold;
+  color: white;
 }
 
 .gray {
   color: #918E9B;
+  
 }
 
 .nav--logo {
@@ -30,6 +32,7 @@ nav {
 
 .nav--text {
   color: white;
+  
 }
 
 section {
@@ -52,6 +55,7 @@ section {
   flex-direction: column; /* ADD */
   position: relative;
   padding: 50px;
+  color: white;
 }
 
 .card--image {
@@ -64,6 +68,7 @@ section {
 .card--title {
   overflow: hidden;
   text-overflow: ellipsis;
+  color: white;
 }
 
 .card--stats {
@@ -71,6 +76,7 @@ section {
     align-items: center;
     justify-content: space-around;
     text-transform: uppercase;
+    
 }
 
 .card--pin {
