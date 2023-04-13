@@ -1,0 +1,19 @@
+/* light-theme.css */
+body {
+  background-color: #fff;
+  color: #000;
+}
+
+h1 {
+  color: #f0f;
+}
+
+/* dark-theme.css */
+body {
+  background-color: #222;
+  color: #fff;
+}
+
+h1 {
+  color: #0ff;
+}

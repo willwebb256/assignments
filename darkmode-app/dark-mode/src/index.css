@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Avenir', sans-serif;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.light {
+  --bg-color: #F8F8F8;
+  --text-color: #333333;
+  --accent-color: #1b6b0f33;
+
+}
+
+.dark {
+  --bg-color: #333333;
+  --text-color: #F8F8F8;
+  --accent-color: #9000ff;
+}
+
+.App.light {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.App.dark {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+nav {
+  background-color: var(--accent-color);
+  color: var(--text-color); /* set text color to var(--text-color) */
+  padding: 1rem;
+  font-family: 'Avenir', sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.navbar__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__item {
+  margin: 0 1rem;
+}
+
+.navbar__item a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+maine {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  padding: 1rem;
+  font-family: 'Avenir', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+footer {
+  background-color: var(--accent-color);
+  color: var(--text-color); /* set text color to var(--text-color) */
+  padding: 1rem;
+  font-family: 'Avenir', sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+button {
+  font-family: 'Avenir', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+:root {
+  --link-color-light: #0077c2;
+  --link-color-dark: #6bbfff;
+}
+
+.light a {
+  color: var(--link-color-light);
+}
+
+.dark a {
+  color: var(--link-color-dark);
+}
