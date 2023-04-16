@@ -7,9 +7,9 @@ export default function Navbar() {
     <nav className="navbar">
       <h1>NBA Game Tracker</h1>
       <div className="navbar-links">
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/contactus">Contact Us</Link>
+        <Link to="/">Scores</Link>
+        <Link to="/stats">Stats</Link>
+        <Link to="/standings">Standings</Link>
       </div>
     </nav>
   );
