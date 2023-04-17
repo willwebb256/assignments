@@ -72,25 +72,33 @@
 }
 
 .scores-title {
-  font-size: 36px;
-  margin-bottom: 20px;
-  text-shadow: 0px 0px 20px #fff, 0px 0px 30px #fff, 0px 0px 40px #fff, 0px 0px 60px #fff;
-}
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-shadow: 0px 0px 20px #fff, 0px 0px 30px #fff, 0px 0px 40px #fff, 0px 0px 60px #fff;
+  }
 
-.scores-description {
-  font-size: 18px;
-  line-height: 1.5;
-  max-width: 600px;
-  text-align: center;
-}
+  .scores-list {
+    max-height: 400px; 
+    overflow-y: scroll; 
+  }
+
+.scores-data {
+    font-size: 18px;
+    line-height: 1.0;
+    max-width: 600px;
+    text-align: center;
+    white-space: nowrap;
+  }
 
 .scores-image {
-  max-width: 60%;
+  max-width: 40%;
   height: auto;
   border: 2px solid #fff;
   padding: 10px;
   filter: brightness(150%) saturate(1000%) hue-rotate(-50deg);
 }
+
+  
 
 /* Stats section styles */
 .stats-container {
@@ -105,21 +113,30 @@
   z-index: 0;
 }
 
-.stats-title {
-  font-size: 36px;
+.stats-subheading {
+  font-size: 20px;
   margin-bottom: 20px;
   text-shadow: 0px 0px 20px #fff, 0px 0px 30px #fff, 0px 0px 40px #fff, 0px 0px 60px #fff;
 }
 
-.stats-description {
-  font-size: 18px;
-  line-height: 1.5;
-  max-width: 600px;
-  text-align: center;
-}
+.stats-list {
+    max-height: 400px; 
+    overflow-y: scroll; 
+  }
+  
+  .stats-data {
+    font-size: 18px;
+    line-height: 1.0;
+    max-width: 600px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  
+  
+  
 
 .stats-image {
-  max-width: 60%;
+  max-width: 40%;
   height: auto;
   border: 2px solid #fff;
   padding: 10px;
@@ -153,10 +170,29 @@
   }
   
   .standings-image {
-    max-width: 60%;
+    max-width: 40%;
     height: auto;
     border: 2px solid #fff;
     padding: 10px;
     filter: brightness(150%) saturate(1000%) hue-rotate(-50deg);
   }
+
+  .standings-subheading {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-shadow: 0px 0px 20px #fff, 0px 0px 30px #fff, 0px 0px 40px #fff, 0px 0px 60px #fff;
+  }
+  
+  .standings-list {
+      max-height: 400px; 
+      overflow-y: scroll; 
+    }
+    
+    .standings-data {
+      font-size: 18px;
+      line-height: 1.0;
+      max-width: 600px;
+      text-align: center;
+      white-space: nowrap;
+    }
   
