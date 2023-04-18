@@ -35,8 +35,8 @@ const Scores = () => {
 
  return (
    <div className="scores-container">
-     <h1 className="scores-title">Welcome to My Sports Feeds</h1>
-     <p>Check out the latest news and scores from your favorite NBA teams.</p>
+     <h1 className="scores-title">NBA Playoffs App ~Scores!</h1>
+     <p>Keep tabs on the scores, stats, and standings here! This page is for Scores, feel free to naviate to the others when you want to check out the stats and standings. Cheers ~ Will</p>
      <DateSelector onDateSelect={handleDateSelect} />
      <div className="scores-list">
        {gameScores.length > 0 ? (
