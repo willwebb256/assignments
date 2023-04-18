@@ -1,198 +1,215 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
 
+
 /* Navbar styles */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #000;
-  color: #fff;
-  padding: 10px;
-  position: relative;
-  z-index: 1;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ background-color: rgb(48, 14, 47);
+ color: #fff;
+ padding: 10px;
+ position: relative;
+ z-index: 1;
 }
+
 
 .navbar-links {
-  display: flex;
-  gap: 20px;
+ display: flex;
+ gap: 20px;
 }
+
 
 .navbar-links a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
+ text-decoration: none;
+ color: #fff;
+ font-weight: bold;
 }
+
 
 /* Main section styles */
-.main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: calc(100vh - 100px);
-  background-color: #000;
-  color: #fff;
-  position: relative;
-  z-index: 0;
-}
+/* .main {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ height: calc(100vh - 100px);
+ background-color: #000;
+ color: #fff;
+ position: relative;
+ z-index: 0;
+} */
+
 
 .main h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
+ font-size: 36px;
+ margin-bottom: 20px;
 }
 
+
 .main p {
-  font-size: 18px;
-  line-height: 1.5;
-  max-width: 600px;
-  text-align: center;
+ font-size: 18px;
+ line-height: 1.5;
+ max-width: 600px;
+ text-align: center;
 }
+
 
 /* Footer styles */
 .footer {
-  background-color: #000;
-  color: #fff;
-  padding: 10px;
-  position: relative;
-  z-index: 1;
-  text-align: center;
+ background-color: rgb(48, 14, 47);
+ color: #fff;
+ padding: 10px;
+ position: relative;
+ z-index: 1;
+ text-align: center;
 }
+
 
 /* Scores section styles */
 .scores-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: calc(100vh - 100px);
-  background-color: #000;
-  color: #fff;
-  position: relative;
-  z-index: 0;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ height: calc(100vh - 100px);
+ background-color: #000;
+ color: #fff;
+ position: relative;
+ z-index: 0;
 }
+
 
 .scores-title {
-    font-size: 20px;
-    margin-bottom: 20px;
-    text-shadow: 0px 0px 20px #fff, 0px 0px 30px #fff, 0px 0px 40px #fff, 0px 0px 60px #fff;
-  }
+   font-size: 36px;
+   margin-bottom: 20px;
+   text-shadow: 0px 0px 20px #fff, 0px 0px 30px #fff, 0px 0px 40px #fff, 0px 0px 60px #fff;
+ }
 
-  .scores-list {
-    max-height: 400px; 
-    overflow-y: scroll; 
-  }
+
+ .scores-list {
+   max-height: 400px;
+   overflow-y: scroll;
+ }
+
 
 .scores-data {
-    font-size: 18px;
-    line-height: 1.0;
-    max-width: 600px;
-    text-align: center;
-    white-space: nowrap;
-  }
+   font-size: 18px;
+   line-height: 1.0;
+   max-width: 600px;
+   text-align: center;
+   white-space: nowrap;
+ }
+
 
 .scores-image {
-  max-width: 40%;
-  height: auto;
-  border: 2px solid #fff;
-  padding: 10px;
-  filter: brightness(150%) saturate(1000%) hue-rotate(-50deg);
+ max-width: 35%;
+ height: auto;
+ border: 2px solid #fff;
+ padding: 10px;
+ filter: brightness(150%) saturate(1000%) hue-rotate(-50deg);
 }
 
-  
+
+
 
 /* Stats section styles */
 .stats-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: calc(100vh - 100px);
-  background-color: #000;
-  color: #fff;
-  position: relative;
-  z-index: 0;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ height: calc(100vh - 100px);
+ background-color: #000;
+ color: #fff;
+ position: relative;
+ z-index: 0;
 }
 
-.stats-subheading {
-  font-size: 20px;
-  margin-bottom: 20px;
-  text-shadow: 0px 0px 20px #fff, 0px 0px 30px #fff, 0px 0px 40px #fff, 0px 0px 60px #fff;
-}
-
-.stats-list {
-    max-height: 400px; 
-    overflow-y: scroll; 
-  }
-  
-  .stats-data {
-    font-size: 18px;
-    line-height: 1.0;
-    max-width: 600px;
-    text-align: center;
-    white-space: nowrap;
-  }
-  
-  
-  
-
-.stats-image {
-  max-width: 40%;
-  height: auto;
-  border: 2px solid #fff;
-  padding: 10px;
-  filter: brightness(150%) saturate(1000%) hue-rotate(-50deg);
-}
-
-/* Standings Us section styles */
-.standings-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: calc(100vh - 100px);
-    background-color: #000;
-    color: #fff;
-    position: relative;
-    z-index: 0;
-  }
-  
-  .standings-title {
+.stats-title {
     font-size: 36px;
     margin-bottom: 20px;
     text-shadow: 0px 0px 20px #fff, 0px 0px 30px #fff, 0px 0px 40px #fff, 0px 0px 60px #fff;
   }
-  
-  .standings-description {
-    font-size: 18px;
-    line-height: 1.5;
-    max-width: 600px;
-    text-align: center;
-  }
-  
-  .standings-image {
-    max-width: 40%;
-    height: auto;
-    border: 2px solid #fff;
-    padding: 10px;
-    filter: brightness(150%) saturate(1000%) hue-rotate(-50deg);
-  }
 
-  .standings-subheading {
-    font-size: 20px;
-    margin-bottom: 20px;
-    text-shadow: 0px 0px 20px #fff, 0px 0px 30px #fff, 0px 0px 40px #fff, 0px 0px 60px #fff;
-  }
-  
+.stats-subheading {
+ font-size: 20px;
+ margin-bottom: 20px;
+ text-shadow: 0px 0px 20px #fff, 0px 0px 30px #fff, 0px 0px 40px #fff, 0px 0px 60px #fff;
+}
+
+
+.stats-list {
+   max-height: 400px;
+   overflow-y: scroll;
+ }
+  .stats-data {
+   font-size: 18px;
+   line-height: 1.0;
+   max-width: 600px;
+   text-align: center;
+   white-space: nowrap;
+ }
+ 
+
+
+.stats-image {
+ max-width: 35%;
+ height: auto;
+ border: 2px solid #fff;
+ padding: 10px;
+ filter: brightness(150%) saturate(1000%) hue-rotate(-50deg);
+}
+
+
+/* Standings Us section styles */
+.standings-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   height: calc(100vh - 100px);
+   background-color: #000;
+   color: #fff;
+   position: relative;
+   z-index: 0;
+ }
+  .standings-title {
+   font-size: 36px;
+   margin-bottom: 20px;
+   text-shadow: 0px 0px 20px #fff, 0px 0px 30px #fff, 0px 0px 40px #fff, 0px 0px 60px #fff;
+ }
+  .standings-description {
+   font-size: 18px;
+   line-height: 1.5;
+   max-width: 600px;
+   text-align: center;
+ }
+  .standings-image {
+   max-width: 35%;
+   height: auto;
+   border: 2px solid #fff;
+   padding: 10px;
+   filter: brightness(150%) saturate(1000%) hue-rotate(-50deg);
+ }
+
+
+ .standings-subheading {
+   font-size: 20px;
+   margin-bottom: 20px;
+   text-shadow: 0px 0px 20px #fff, 0px 0px 30px #fff, 0px 0px 40px #fff, 0px 0px 60px #fff;
+ }
   .standings-list {
-      max-height: 400px; 
-      overflow-y: scroll; 
-    }
-    
-    .standings-data {
-      font-size: 18px;
-      line-height: 1.0;
-      max-width: 600px;
-      text-align: center;
-      white-space: nowrap;
-    }
+     max-height: 400px;
+     overflow-y: scroll;
+   }
   
+   .standings-data {
+     font-size: 18px;
+     line-height: 1.0;
+     max-width: 600px;
+     text-align: center;
+     white-space: nowrap;
+   }
+
+

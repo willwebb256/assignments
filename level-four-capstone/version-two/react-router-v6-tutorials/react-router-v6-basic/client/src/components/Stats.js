@@ -32,7 +32,7 @@ const Stats = () => {
 
   return (
     <div className="stats-container">
-      <h1 className="stats-heading">Welcome to My Sports Feeds</h1>
+      <h1 className="stats-title">Welcome to My Sports Feeds</h1>
       <p className="stats-text">
         Check out the latest team game stats from your favorite NBA teams.
       </p>

@@ -31,7 +31,7 @@ const Standings = () => {
 
   return (
     <div className="standings-container">
-      <h1 className="standings-heading">NBA Standings</h1>
+      <h1 className="standings-title">NBA Standings</h1>
       <div className="standings-year-selector">
         <label htmlFor="year-selector">Select a Year:</label>
         <YearSelector
