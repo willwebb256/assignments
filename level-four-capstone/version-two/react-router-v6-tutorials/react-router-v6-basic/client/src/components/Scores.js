@@ -3,9 +3,12 @@ import { useEffect, useState } from "react";
 import DateSelector from "./DateSelector";
 
 
+
 const Scores = () => {
  const [gameScores, setGameScores] = useState([]);
  const [selectedDate, setSelectedDate] = useState("");
+
+ 
 
 
  useEffect(() => {
@@ -35,7 +38,7 @@ const Scores = () => {
 
  return (
    <div className="scores-container">
-     <h1 className="scores-title">NBA Playoffs App ~Scores!</h1>
+     <h1 className="scores-title">NBA Playoffs App ~ Scores!</h1>
      <p>Keep tabs on the scores, stats, and standings here! This page is for Scores, feel free to naviate to the others when you want to check out the stats and standings. Cheers ~ Will</p>
      <DateSelector onDateSelect={handleDateSelect} />
      <div className="scores-list">
