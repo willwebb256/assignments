@@ -33,7 +33,7 @@ const Standings = () => {
     <div className="standings-container">
       <h1 className="standings-title">NBA Playoffs App ~ Standings!</h1>
       <div className="standings-year-selector">
-        <label htmlFor="year-selector">Select a Year:</label>
+        <label htmlFor="year-selector" className="scores-subheading">Select a Year:</label>
         <YearSelector
           selectedYear={selectedYear}
           onChange={handleYearChange}

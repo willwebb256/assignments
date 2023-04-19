@@ -14,7 +14,7 @@ const DateSelector = ({ onDateSelect }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
+      <label className="scores-subheading">
         Select a date:
         <input type="date" value={date} onChange={handleChange} />
       </label>

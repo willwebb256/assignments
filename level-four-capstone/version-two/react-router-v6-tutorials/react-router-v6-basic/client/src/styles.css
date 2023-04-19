@@ -86,6 +86,12 @@
    text-shadow: 0px 0px 20px #fff, 0px 0px 30px #fff, 0px 0px 40px #fff, 0px 0px 60px #fff;
  }
 
+ .scores-subheading {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-shadow: 0px 0px 20px #fff, 0px 0px 30px #fff, 0px 0px 40px #fff, 0px 0px 60px #fff;
+ }
+
 
  .scores-list {
    max-height: 400px;

@@ -33,7 +33,7 @@ const Stats = () => {
   return (
     <div className="stats-container">
       <h1 className="stats-title">NBA Playoffs App ~ Stats!</h1>
-      <p className="stats-text">
+      <p className="stats-subheading">
         Check out the latest team game stats from your favorite NBA teams.
       </p>
       <DateSelector onDateSelect={handleDateSelect} />
