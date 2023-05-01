@@ -59,7 +59,7 @@ const Scores = () => {
       </div>
       <img
         className="scores-image"
-        src="https://images.unsplash.com/photo-1532040683343-edbde6dd500d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1476&q=80"
+        src="https://images.unsplash.com/photo-1519861531473-9200262188bf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
         alt="homepage"
       />
     </div>
