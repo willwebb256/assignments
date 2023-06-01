@@ -21,6 +21,29 @@ sithRouter.route("/")
     siths.push(newSith)
     res.send('Successfully added ${newSith.title} to the database!');
     
-})
+});
+
+sithRouter.route("/:id")
+  .put((req, res) => {
+    const { id } = req.params;
+    const updatedSith = req.body;
+    const index = siths.findIndex(sith => sith._id === id);
+    if (index !== -1) {
+      siths[index] = { ...siths[index], ...updatedSith };
+      res.send(`Successfully updated Sith with ID: ${id}`);
+    } else {
+      res.status(404).send(`Sith with ID: ${id} not found`);
+    }
+  })
+  .delete((req, res) => {
+    const { id } = req.params;
+    const index = siths.findIndex(sith => sith._id === id);
+    if (index !== -1) {
+      siths.splice(index, 1);
+      res.send(`Successfully deleted Sith with ID: ${id}`);
+    } else {
+      res.status(404).send(`Sith with ID: ${id} not found`);
+    }
+  });
 
 module.exports = sithRouter
