@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
@@ -10,9 +11,9 @@ app.use(express.json())
 app.use(morgan('dev'))
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://williamwebb256:VcDolAuhPKB5r2X5@cluster0.0xeqw1c.mongodb.net/', {
+.connect(process.env.MONGODB_ATLAS_URL, {
 //   useNewUrlParser: true,
-//   useUnifiedTopology: true
+//   useUnifiedTopology: truemongoose
 
 })
   .then(() => console.log("Connected to the DB"))
