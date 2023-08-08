@@ -1,0 +1,3 @@
+[submodule "rlm-token-auth-series-context"]
+	path = rlm-token-auth-series-context
+	url = https://github.com/v-school/rlm-token-auth-series-context.git

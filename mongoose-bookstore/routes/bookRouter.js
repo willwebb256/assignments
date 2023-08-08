@@ -41,4 +41,34 @@ bookRouter.post("/:authorID", (req, res, next) => {
   });
   
 
+// Like a book
+bookRouter.put("/like/:bookID", async (req, res, next) => {
+  try {
+    const updatedBook = await Book.findOneAndUpdate(
+      { _id: req.params.bookID },
+      { $inc: { likes: 1 }},
+      { new: true }
+    );
+    
+    return res.status(201).send(updatedBook);
+  } catch (err) {
+    res.status(500);
+    return next(err);
+  }
+})
+// Find books by a like range
+bookRouter.get("/search/bylikes", async (req, res, next) => {
+  try {
+    const books = await Book.where("likes").gte(3).exec();
+
+    return res.status(200).send(books);
+  } catch (err) {
+    res.status(500);
+    return next(err);
+  }
+});
+
+
+;
+
 module.exports = bookRouter

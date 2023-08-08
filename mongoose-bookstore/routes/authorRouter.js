@@ -14,7 +14,24 @@ authorRouter.get("/", (req, res, next) => {
         return next(err);
       });
   });
+ 
   
+// Get author(s) by search term
+authorRouter.get("/search", async (req, res, next) => {
+  try {
+    const { author } = req.query;
+    const pattern = new RegExp(author, "i");
+    const authors = await Author.find({ name: { $regex: pattern } }).exec();
+
+    return res.status(200).send(authors);
+  } catch (err) {
+    res.status(500);
+    return next(err);
+  }
+});
+
+  
+
   
 // Add new author
 authorRouter.post("/", (req, res, next) => {
