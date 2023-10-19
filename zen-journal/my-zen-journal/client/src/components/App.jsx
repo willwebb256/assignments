@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import ZenQuote from './ZenQuote.jsx';
 import JournalEntry from './JournalEntry';
+import JournalList from './JournalList';
 
 const App = () => {
   const [journalEntries, setJournalEntries] = useState([]);
@@ -23,6 +22,8 @@ const App = () => {
 
       {/* Render the Journal Entry component for new entries */}
       <JournalEntry onEntrySubmit={addJournalEntry} />
+      {/* Render the Journal List of all past entries */}
+      <JournalList></JournalList>
     </div>
   );
 };
