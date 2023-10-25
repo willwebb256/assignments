@@ -1,8 +1,11 @@
 import { useState } from 'react'
 import './App.css'
-import ZenQuote from './ZenQuote.jsx';
-import JournalEntry from './JournalEntry';
-import JournalList from './JournalList';
+import ZenQuote from './components/ZenQuote.jsx';
+import JournalEntry from './components/JournalEntry';
+import JournalList from './components/JournalList';
+import Entry from './components/Entry';
+
+
 
 const App = () => {
   const [journalEntries, setJournalEntries] = useState([]);
@@ -19,7 +22,7 @@ const App = () => {
       {journalEntries.map((entry, index) => (
         <div key={index}>{entry}</div>
       ))}
-
+      <Entry></Entry>
       {/* Render the Journal Entry component for new entries */}
       <JournalEntry onEntrySubmit={addJournalEntry} />
       {/* Render the Journal List of all past entries */}

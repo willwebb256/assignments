@@ -11,7 +11,7 @@ const ZenQuote = () => {
         const response = await fetch(corsProxyUrl + apiUrl, {
           method: 'GET',
           headers: {
-            'Origin': 'http://localhost:9000',
+            'Origin': 'http://localhost:9000', 
           },
         });
         const data = await response.json();
@@ -34,5 +34,3 @@ const ZenQuote = () => {
 };
 
 export default ZenQuote;
-
-

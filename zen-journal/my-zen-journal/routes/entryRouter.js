@@ -75,40 +75,4 @@ return res.status(201).send(updatedEntry)
 })
 
 
-
-
-// Upvote Issue
-// issueRouter.post("/upvote/:issueId", (req, res, next) => {
-// Issue.findOneAndUpdate(
-// { _id: req.params.issueId },
-// { $push: { upVotes: req.auth._id } },
-// { new: true },
-// (err, updatedIssue) => {
-// if(err){
-// res.status(500);
-// return next(err);
-// }
-// return res.status(200).send(updatedIssue);
-// }
-// );
-// });
-
-
-// Downvote Issue
-// issueRouter.post("/downvote/:issueId", (req, res, next) => {
-// Issue.findOneAndUpdate(
-// { _id: req.params.issueId },
-// { $push: { downVotes: req.auth._id } },
-// { new: true },
-// (err, updatedIssue) => {
-// if(err){
-// res.status(500);
-// return next(err);
-// }
-// return res.status(200).send(updatedIssue);
-// }
-// );
-// });
-
-
 module.exports = entryRouter;

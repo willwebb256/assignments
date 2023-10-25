@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 
-export const UserContext = React.createContext();
+const UserContext = React.createContext();
 
 
 const userAxios = axios.create();
@@ -38,6 +38,7 @@ const navigate = useNavigate();
 
 const [userState, setUserState] = useState(initState);
 const [publicState, setPublicState] = useState([]);
+
 
 
 function signup(credentials) {
@@ -120,28 +121,37 @@ userAxios
 .get('/api/entry')
 .then((res) =>
 setPublicState(res.data)
+// setPublicState(prevState => ({
+// ...prevState,
+// issues: res.data
+// }))
 )
 .catch((err) => console.log(err.response.data.errMsg));
 }
 
 
 function addEntry(newEntry) {
-userAxios
-.post('/api/entry', newEntry)
-.then((res) => {
-setUserState((prevState) => ({
-...prevState,
-entries: [...prevState.entries, res.data],
-}));
-})
-.catch((err) => console.log(err.response.data.errMsg));
-}
+    return userAxios.post('/api/entry', newEntry)
+      .then((res) => {
+        setUserState((prevState) => ({
+          ...prevState,
+          entries: [...prevState.entries, res.data],
+        }));
+        return res.data; // Return the newly created entry
+      })
+      .catch((err) => {
+        console.log(err.response.data.errMsg);
+        throw err; // Re-throw the error for handling in the component
+      });
+  }
+  
 
 
 function deleteEntry(entryId) {
 userAxios
 .delete(`/api/entry/${entryId}`)
 .then((res) => {
+// Remove the deleted entry from the local state
 const updatedEntries = userState.entries.filter((entry) => entry._id !== entryId);
 setUserState((prevState) => ({
 ...prevState,
@@ -150,6 +160,8 @@ entries: updatedEntries,
 })
 .catch((err) => console.log(err.response.data.errMsg));
 }
+
+
 
 
 return (
@@ -171,3 +183,5 @@ deleteEntry,
 </UserContext.Provider>
 );
 }
+
+export { UserContext, UserProvider }
