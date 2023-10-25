@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const JournalEntry = ({ newEntry, setNewEntry, onEntrySubmit }) => {
+const JournalEntry = ({ newEntry, setNewEntry, onEntrySubmit, isShow, entryyy }) => {
   const { title, description } = newEntry ?? { title: '', description: '' };
 
   const handleTitleChange = (e) => {
@@ -11,32 +11,43 @@ const JournalEntry = ({ newEntry, setNewEntry, onEntrySubmit }) => {
     setNewEntry({ ...newEntry, description: e.target.value });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log('inside Hsubmit newEntry:', newEntry)
     onEntrySubmit();
   };
 
   return (
     <div>
-      <h2 style={{ color: 'white' }}>Journal Entry</h2>
-      <p style={{ color: 'white' }}>Your journal content goes here.</p>
+      {!isShow ? 
+        <>
+          <h2 style={{ color: 'white' }}>Journal Entry</h2>
+          <p style={{ color: 'white' }}>Your journal content goes here.</p>
+          <div>
+            <input
+              type="text"
+              placeholder="Title"
+              value={title}
+              onChange={handleTitleChange}
+            />
+          </div>
+          <div>
+            <textarea
+              placeholder="Description"
+              rows="4"
+              cols="50"
+              value={description}
+              onChange={handleDescriptionChange}
+            />
+          </div>
+          <button onClick={handleSubmit}>Submit</button>
+        </>
+      :
       <div>
-        <input
-          type="text"
-          placeholder="Title"
-          value={title}
-          onChange={handleTitleChange}
-        />
+        <h3>{entryyy.title}</h3>
+        <h6>{entryyy.description}</h6>
       </div>
-      <div>
-        <textarea
-          placeholder="Description"
-          rows="4"
-          cols="50"
-          value={description}
-          onChange={handleDescriptionChange}
-        />
-      </div>
-      <button onClick={handleSubmit}>Submit</button>
+      }
     </div>
   );
 };

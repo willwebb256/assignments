@@ -15,6 +15,7 @@ entryRouter.get("/", async (req, res, next) => {
 
 // Get entries by user id
 entryRouter.get("/user", async (req, res, next) => {
+  console.log('yaya', req.auth._id)
   try {
     const entries = await Entry.find({ user: req.auth._id });
     return res.status(200).send(entries);

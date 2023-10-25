@@ -15,7 +15,7 @@ export default function JournalList(props) {
   return (
     <div className="journal-list">
       {entries.map(entry => (
-        <JournalEntry {...entry} key={entry._id} />
+        <JournalEntry {...entry} key={entry._id} isShow={true} entryyy={entry} />
       ))}
     </div>
   );

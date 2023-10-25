@@ -107,6 +107,7 @@ function getUserEntries() {
 userAxios
 .get('/api/entry/user')
 .then((res) => {
+  console.log('getUserEntries', res.data)
 setUserState((prevState) => ({
 ...prevState,
 entries: res.data,
@@ -135,7 +136,7 @@ function addEntry(newEntry) {
       .then((res) => {
         setUserState((prevState) => ({
           ...prevState,
-          entries: [...prevState.entries, res.data],
+          entries: [res.data],
         }));
         return res.data; // Return the newly created entry
       })
