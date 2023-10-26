@@ -148,19 +148,19 @@ function addEntry(newEntry) {
   
 
 
-function deleteEntry(entryId) {
-userAxios
-.delete(`/api/entry/${entryId}`)
-.then((res) => {
-// Remove the deleted entry from the local state
-const updatedEntries = userState.entries.filter((entry) => entry._id !== entryId);
-setUserState((prevState) => ({
-...prevState,
-entries: updatedEntries,
-}));
-})
-.catch((err) => console.log(err.response.data.errMsg));
-}
+  function deleteEntry(entryId) {
+    userAxios
+      .delete(`/api/entry/${entryId}`)
+      .then((res) => {
+        // Remove the deleted entry from the local state
+        const updatedEntries = userState.entries.filter((entry) => entry._id !== entryId);
+        setUserState((prevState) => ({
+          ...prevState,
+          entries: updatedEntries,
+        }));
+      })
+      .catch((err) => console.log(err.response.data.errMsg));
+  }
 
 
 

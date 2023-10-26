@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const JournalEntry = ({ newEntry, setNewEntry, onEntrySubmit, isShow, entryyy }) => {
+const JournalEntry = ({ newEntry, setNewEntry, onEntrySubmit, isShow, entryyy, onDelete }) => {
   const { title, description } = newEntry ?? { title: '', description: '' };
 
   const handleTitleChange = (e) => {
@@ -15,6 +15,10 @@ const JournalEntry = ({ newEntry, setNewEntry, onEntrySubmit, isShow, entryyy })
     e.preventDefault()
     console.log('inside Hsubmit newEntry:', newEntry)
     onEntrySubmit();
+  };
+
+  const handleDelete = () => {
+    onDelete(entryyy._id); // Pass the entry's ID to the onDelete function
   };
 
   return (
@@ -46,6 +50,7 @@ const JournalEntry = ({ newEntry, setNewEntry, onEntrySubmit, isShow, entryyy })
       <div>
         <h3>{entryyy.title}</h3>
         <h6>{entryyy.description}</h6>
+        <button onClick={handleDelete}>Delete</button> {/* Add the delete button */}
       </div>
       }
     </div>

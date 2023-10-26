@@ -10,6 +10,7 @@ export default function Profile() {
     addEntry,
     getUserEntries,
     entries,
+    deleteEntry,
   } = useContext(UserContext);
 
   const [newEntry, setNewEntry] = useState({ title: '', description: '' });
@@ -47,7 +48,7 @@ export default function Profile() {
       />
       <h3>Your Journal Entries</h3>
       {entries.length > 0 ? (
-        <JournalList entries={entries} />
+        <JournalList entries={entries} deleteEntry={deleteEntry} />
       ) : (
         <p>No journal entries available.</p>
       )}
